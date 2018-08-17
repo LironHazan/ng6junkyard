@@ -129,5 +129,10 @@
       }
     }
   },
-  "defaultProject": "ng6junkyard"
+  "defaultProject": "ng6junkyard",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

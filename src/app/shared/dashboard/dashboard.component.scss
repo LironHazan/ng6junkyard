@@ -1,3 +1,14 @@
+@import '../../styles/variables';
+
+
+.heading {
+  width: 100%;
+  height: 20px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $font-stack;
+}
+
 .grid-container {
   margin: 20px;
 }
