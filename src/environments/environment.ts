@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseUrl: 'http://fakerestapi.azurewebsites.net/api'
+  baseUrl: 'http://host:port/api'
 };

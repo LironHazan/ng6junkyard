@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { time } from './junk-decorators';
+import {AppService} from './app.service';
 
 
 @Component({
@@ -7,11 +8,17 @@ import { time } from './junk-decorators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ng6junkyard';
 
-  constructor() {
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
     this.something(4, 5);
+    this.appService.getContacts() // just for testing the interceptors
+      .subscribe((result) => {
+        console.log(result);
+      }, err => console.log(err));
   }
 
   @time
