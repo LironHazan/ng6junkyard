@@ -7,6 +7,9 @@ import { NavigationComponent } from './core/navigation/navigation.component';
 import { SharedModule } from './shared/shared.module';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule} from '@angular/material';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {ApiInterceptor} from './interceptors/api.interceptor';
+import {TokenInterceptor} from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import {MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule} from '
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
     LayoutModule,
@@ -23,7 +27,18 @@ import {MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule} from '
     MatListModule,
     MatIconModule
 ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
