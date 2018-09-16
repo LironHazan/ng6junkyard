@@ -10,6 +10,8 @@ import {MatSidenavModule, MatToolbarModule, MatListModule, MatIconModule} from '
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ApiInterceptor} from './interceptors/api.interceptor';
 import {TokenInterceptor} from './interceptors/token.interceptor';
+import { AppRoutingModule } from './/app-routing.module';
+import {UsersModule} from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {TokenInterceptor} from './interceptors/token.interceptor';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule,
+    UsersModule
 ],
   providers: [
     {

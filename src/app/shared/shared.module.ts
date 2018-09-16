@@ -8,9 +8,10 @@ import {
   MatMenuModule, MatPaginatorModule,
   MatSortModule,
   MatTableModule,
+  MatDialogModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
-
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
   imports: [
@@ -23,10 +24,12 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
-  declarations: [ DashboardComponent],
+  declarations: [ DashboardComponent, MyDialogComponent],
   exports:      [ DashboardComponent,
-    CommonModule, FormsModule, DashboardComponent ]
+    CommonModule, FormsModule, DashboardComponent ],
+  entryComponents: [MyDialogComponent]
 })
 export class SharedModule { }

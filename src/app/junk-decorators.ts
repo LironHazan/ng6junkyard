@@ -16,7 +16,7 @@ const time = (target, name, descriptor) => {
       }
     };
   }
-  return descriptor; // return the descriptor
+  return descriptor;
 };
 
 export { time };
