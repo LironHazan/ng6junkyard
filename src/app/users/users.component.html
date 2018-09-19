@@ -1,4 +1,4 @@
-<div>Space For Filters</div>
+<app-users-filters [users]="mockedUsers" [fields]="fields"></app-users-filters>
 <div class="grid-container">
   <ag-grid-angular #agGrid [gridOptions]="gridOptions"
                    (gridReady)="onGridReady($event)"

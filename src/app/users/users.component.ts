@@ -15,9 +15,16 @@ import {UserDetailsStoreService} from './store/user-details-store.service';
 })
 export class UsersComponent implements OnInit {
   mockedUsers = users;
-  private dataFromParent: any = {liron : {age: 30}};
   gridOptions: GridOptions;
   selectedUser: User;
+  fields: string[] = ['company', 'department', 'role'];
+
+  // filter levels:
+  // company
+    // department
+     // role
+
+  private filterLevel = {state: this.mockedUsers, name: 'company'};
 
   constructor(private myDialogService: MyDialogService,
   private usersService: UsersService,
