@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-user-dialog',
   templateUrl: './user-dialog.component.html',
   styleUrls: ['./user-dialog.component.scss']
 })
-export class UserDialogComponent implements OnInit {
+export class UserDialogComponent  {
 
-  constructor() { }
-  data;
-  ngOnInit() {
-  }
-
+  constructor(@Inject(MAT_DIALOG_DATA) public data) { }
+  public user = this.data.data;
 }
