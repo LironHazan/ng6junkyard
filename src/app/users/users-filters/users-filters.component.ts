@@ -11,11 +11,13 @@ export class UsersFiltersComponent implements OnInit {
 
   @Input() users: User[];
   @Input() fields: string[];
-  private filterTags;
+  public filterTags;
+  public companies;
   constructor(private usersFiltersService: UsersFiltersService) { }
 
   ngOnInit() {
     this.filterTags = this.usersFiltersService.extractFilterTags(this.users, this.fields);
+    this.companies = Array.from(this.filterTags.company);
     console.log(this.filterTags);
   }
 
