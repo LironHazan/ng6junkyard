@@ -1,5 +1,8 @@
 <div class="filters-wrapper">
-  <app-users-filters [users]="mockedUsers" [fields]="fields"></app-users-filters>
+  <app-users-filters [users]="mockedUsers"
+                     [fields]="fields"
+                     (itemSelected)="onItemSelected(item)"
+  ></app-users-filters>
 </div>
 <div class="grid-container">
   <ag-grid-angular #agGrid [gridOptions]="gridOptions"

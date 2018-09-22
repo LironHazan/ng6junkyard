@@ -1,8 +1,8 @@
 <div class="filters-container">
   <div *ngFor="let filter of fields">
     <mat-form-field>
-      <mat-select [placeholder]="filter" [(value)]="selectedValue" (click)="onFilterSelect(selectedValue)">
-        <mat-option *ngFor="let item of filterTags[filter]" [value]="item">
+      <mat-select [placeholder]="filter">
+        <mat-option (onSelectionChange)="onFilterSelect($event, filter)" *ngFor="let item of filterTags[filter]" [value]="item">
           {{item}}
         </mat-option>
       </mat-select>

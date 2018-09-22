@@ -19,4 +19,5 @@ export class UsersService {
       role
     };
   }
+
 }
