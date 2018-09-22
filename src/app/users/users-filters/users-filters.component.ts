@@ -12,17 +12,15 @@ export class UsersFiltersComponent implements OnInit {
   @Input() users: User[];
   @Input() fields: string[];
   public filterTags;
-  public companies;
-  public department;
-  public role;
+  public selectedValue;
   constructor(private usersFiltersService: UsersFiltersService) { }
 
   ngOnInit() {
     this.filterTags = this.usersFiltersService.extractFilterTags(this.users, this.fields);
-    this.companies = Array.from(this.filterTags.company);
-    this.department = Array.from(this.filterTags.department);
-    this.role = Array.from(this.filterTags.role);
     console.log(this.filterTags);
   }
 
+  onFilterSelect(val) {
+    console.log(val);
+  }
 }
