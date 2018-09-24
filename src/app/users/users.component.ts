@@ -89,7 +89,7 @@ export class UsersComponent implements OnInit {
     return this.myDialogService.open(UserDialogComponent, this.selectedUser);
   }
 
-  onItemSelected() {
-
+  onItemSelected(item) {
+    console.log(item);
   }
 }

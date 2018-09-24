@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from '../models/user.model';
 import {UsersFiltersService} from './users-filters.service';
 
@@ -12,7 +12,8 @@ export class UsersFiltersComponent implements OnInit {
 
   @Input() users: User[];
   @Input() fields: string[];
-  @Output() itemSelected;
+  @Output() itemSelected = new EventEmitter();
+
   public filterTags;
   constructor(private usersFiltersService: UsersFiltersService) { }
 

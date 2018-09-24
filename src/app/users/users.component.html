@@ -1,7 +1,7 @@
 <div class="filters-wrapper">
   <app-users-filters [users]="mockedUsers"
                      [fields]="fields"
-                     (itemSelected)="onItemSelected(item)"
+                     (itemSelected)="onItemSelected($event)"
   ></app-users-filters>
 </div>
 <div class="grid-container">

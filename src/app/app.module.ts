@@ -12,11 +12,13 @@ import {ApiInterceptor} from './interceptors/api.interceptor';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 import { AppRoutingModule } from './/app-routing.module';
 import {UsersModule} from './users/users.module';
+import { EmailHistoryComponent } from './email-history/email-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
+    EmailHistoryComponent,
   ],
   imports: [
     BrowserModule,
