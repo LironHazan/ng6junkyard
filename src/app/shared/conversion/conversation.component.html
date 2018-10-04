@@ -1,0 +1,6 @@
+
+  <div> {{conversation.title}} </div>
+  <div *ngFor="let msg of messages">
+    <div> {{msg.sent_from}} < {{msg.email}} {{msg.sent_at}} > </div>
+    <div> {{msg.content}} </div>
+  </div>
