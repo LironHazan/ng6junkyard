@@ -18,5 +18,10 @@ export class MyDialogService {
     const conf = this.mediumConf;
     return this.dialog.open(MyDialogComponent, conf);
   }
+
+  // Alert dialog component will replace the MyDialogComponent
+  public error<T>( error: any) {
+    return this.dialog.open(MyDialogComponent, {data: error, panelClass: 'alert-panel'});
+  }
 }
 
