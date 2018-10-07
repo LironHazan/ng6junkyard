@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { time } from './junk-decorators';
 import {AppService} from './app.service';
 
@@ -9,6 +9,11 @@ import {AppService} from './app.service';
 })
 export class AppComponent implements OnInit {
 
+  @HostListener('copy', ['$event.target'])
+  onCopy(copied) {
+    console.log(copied);
+  }
+
   constructor(private appService: AppService) {}
 
   ngOnInit() {
@@ -18,5 +23,9 @@ export class AppComponent implements OnInit {
   @time
   something(a, b) {
     console.log('inside decorated prop');
+  }
+
+  handleUserAction(action) {
+    console.log(action);
   }
 }

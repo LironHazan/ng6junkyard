@@ -13,6 +13,7 @@ import {
 import {LayoutModule} from '@angular/cdk/layout';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import {ConversationComponent} from './conversion/conversation.component';
+import { SpyOnUserActionsComponent } from './spy-on-user-actions/spy-on-user-actions.component';
 
 @NgModule({
   imports: [
@@ -28,9 +29,9 @@ import {ConversationComponent} from './conversion/conversation.component';
     MatSortModule,
     MatDialogModule
   ],
-  declarations: [ DashboardComponent, MyDialogComponent, ConversationComponent],
+  declarations: [ DashboardComponent, MyDialogComponent, ConversationComponent, SpyOnUserActionsComponent],
   exports:      [ DashboardComponent,
-    CommonModule, FormsModule, DashboardComponent, ConversationComponent ],
+    CommonModule, FormsModule, DashboardComponent, ConversationComponent, SpyOnUserActionsComponent ],
   entryComponents: [MyDialogComponent]
 })
 export class SharedModule { }

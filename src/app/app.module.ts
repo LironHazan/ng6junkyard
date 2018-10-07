@@ -13,6 +13,7 @@ import {TokenInterceptor} from './interceptors/token.interceptor';
 import { AppRoutingModule } from './/app-routing.module';
 import {UsersModule} from './users/users.module';
 import { EmailHistoryComponent } from './email-history/email-history.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { EmailHistoryComponent } from './email-history/email-history.component';
     MatListModule,
     MatIconModule,
     AppRoutingModule,
-    UsersModule
+    UsersModule,
+    FormsModule,
+    ReactiveFormsModule
 ],
   providers: [
     {
