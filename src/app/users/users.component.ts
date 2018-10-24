@@ -3,7 +3,6 @@ import {MyDialogService} from '../shared/my-dialog/my-dialog.service';
 import {UserDialogComponent} from './user-dialog/user-dialog.component';
 import {users} from '../../../mocks/users';
 import {GridOptions} from 'ag-grid-community';
-import {RedComponent} from './red/red.component';
 import {User} from './models/user.model';
 import {UsersService} from './users.service';
 import {UserDetailsStoreService} from './store/user-details-store.service';
@@ -32,38 +31,32 @@ export class UsersComponent implements OnInit {
     this.gridOptions = <GridOptions>{};
     this.gridOptions.columnDefs = [
       {
-        headerName: "ID",
-        field: "id",
+        headerName: 'ID',
+        field: 'id',
       },
       {
-        headerName: "Name",
-        field: "first_name",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Name',
+        field: 'first_name',
       },
       {
-        headerName: "Last Name",
-        field: "last_name",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Last Name',
+        field: 'last_name',
       },
       {
-        headerName: "Email",
-        field: "email",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Email',
+        field: 'email',
       },
       {
-        headerName: "Company",
-        field: "company",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Company',
+        field: 'company',
       },
       {
-        headerName: "Department",
-        field: "department",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Department',
+        field: 'department',
       },
       {
-        headerName: "Job Title",
-        field: "role",
-        //cellRendererFramework: RedComponent,
+        headerName: 'Job Title',
+        field: 'role',
       },
 
     ];

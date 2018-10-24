@@ -1,6 +1,12 @@
-# Ng6junkyard
+### Ng6junkyard - Angular playground
 
-Using this projects I demonstrate some core concepts used in every day app development when developing 
+## Now Ng7junkyard (upgraded version)
+
+* This project is a personal playground area, 
+I'm trying to keep the structure modular and some of the modules / 
+components I'm implementing / POC's here I actually reuse on other real life projects, 
+* This project also being used as reference for blog posts I'm publishing ([my medium](https://medium.com/@lironhazan)).
+* This project also being used to demonstrate some of the core concepts of an every day app development when developing 
 with Angular and rxjs ( 6 + ).
 
 
