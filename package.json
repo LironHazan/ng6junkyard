@@ -25,7 +25,9 @@
     "ag-grid-angular": "^19.0.0",
     "ag-grid-community": "^19.0.0",
     "core-js": "^2.5.4",
+    "ngTagify": "file:package/ngTagify-1.0.0.tgz",
     "rxjs": "^6.3.3",
+    "save": "^2.3.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

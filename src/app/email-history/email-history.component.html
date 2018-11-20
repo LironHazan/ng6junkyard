@@ -1,3 +1,15 @@
+<p>
+  <a (click)="nativeWindow.open('http://www.yahoo.com', '_blank', 'width=600,height=250')">test</a>
+</p>
+<div>
+  testing tagify wrapper
+  <tagify [settings]="settings"
+          (add)="onAdd($event)"
+          (remove)="onRemove($event)">
+  </tagify>
+  <button (click)="clearTags()">clear</button>
+  <button (click)="addTags()">add Tags</button>
+</div>
 <div *ngFor="let conversation of conversations">
   <app-conversation [conversation]="conversation"></app-conversation>
 </div>

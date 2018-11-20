@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {email_conversions} from '../../../mocks/emails';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {WindowService} from '../shared/windowRef/window.service';
+import {TagifyService} from 'ngTagify';
 
 @Component({
   selector: 'app-email-history',
@@ -10,14 +12,16 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class EmailHistoryComponent implements OnInit {
 
   public conversations = email_conversions;
-
+  public settings = { blacklist: ['fucking', 'shit']};
   rForm: FormGroup;
   post: any;                     // A property for our submitted form
   description: string = '';
   name: string = '';
   titleAlert: string = 'This field is required';
-
-  constructor(private fb: FormBuilder) {
+  public nativeWindow;
+  constructor(private fb: FormBuilder,
+              private winRef: WindowService,
+              private tagifyService: TagifyService) {
 
     this.rForm = fb.group({
       'name': [null, Validators.required],
@@ -28,7 +32,7 @@ export class EmailHistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.nativeWindow = this.winRef.getNativeWindow();
     this.rForm.get('validate').valueChanges.subscribe(
       (validate) => {
         if (validate == '1') {
@@ -40,6 +44,21 @@ export class EmailHistoryComponent implements OnInit {
         this.rForm.get('name').updateValueAndValidity();
       }
     );
+  }
+
+  onAdd(tagify) {
+    console.log('added a tag', tagify);
+  }
+
+  onRemove(tags) {
+    console.log('removed a tag', tags);
+  }
+
+  clearTags() {
+    this.tagifyService.removeAll();
+  }
+  addTags() {
+    this.tagifyService.addTags(['this', 'is', 'cool']);
   }
 
   addPost(post) {

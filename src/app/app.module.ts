@@ -14,6 +14,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import {UsersModule} from './users/users.module';
 import { EmailHistoryComponent } from './email-history/email-history.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TagifyModule} from 'ngTagify';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     UsersModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TagifyModule.forRoot()
 ],
   providers: [
     {
